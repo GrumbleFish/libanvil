@@ -20,7 +20,7 @@
 #ifndef REGION_FILE_HPP_
 #define REGION_FILE_HPP_
 
-#include <boost/regex.hpp>
+#include <regex>
 #include <string>
 #include "region.hpp"
 
@@ -30,7 +30,7 @@ public:
 	/*
 	 * Region file pattern
 	 */
-	static const boost::regex PATTERN;
+	static const std::regex PATTERN;
 
 	/*
 	 * Region file path
