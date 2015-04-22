@@ -18,7 +18,7 @@
  */
 
 #include <cstring>
-#include <zlib.h>
+#include "zlib.h"
 #include "compression.hpp"
 
 /*
