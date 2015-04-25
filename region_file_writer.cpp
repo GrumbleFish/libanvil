@@ -20,7 +20,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <vector>
-#include "byte_stream.hpp"
+//#include "byte_stream.hpp"
 #include "chunk_info.hpp"
 #include "compression.hpp"
 #include "region_dim.hpp"

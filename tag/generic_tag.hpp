@@ -24,6 +24,7 @@
 #include <string>
 #include <vector>
 #include <cstdint>
+#include "../byte_stream.hpp"
 
 class generic_tag {
 public:
@@ -91,7 +92,23 @@ public:
 	/*
 	 * Return a generic tag's data
 	 */
-	virtual std::vector<char> get_data(bool list_ele) { return this->get_data(list_ele); }
+	virtual std::vector<char> get_data(bool list_ele) { 
+		byte_stream stream(byte_stream::SWAP_ENDIAN);
+
+		get_data(list_ele, stream); //get the data
+	
+		return stream.vbuf();
+	}
+
+	/*
+	 * Save a generic tag's data to a stream
+	 */
+	virtual void get_data(bool list_ele, byte_stream& stream) { return this->get_data(list_ele, stream); }
+
+	/*
+	 * Return the size of a generic tag's data. Equivaluent to get_data().size(), but faster;
+	 */
+	virtual unsigned int get_data_size(bool list_ele) { return this->get_data_size(list_ele); }
 
 	/*
 	 * Return a generic tag's name
